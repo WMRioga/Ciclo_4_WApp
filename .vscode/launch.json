@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BancoEssenceApplication<banco_essence>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.banco_essence.banco_essence.BancoEssenceApplication",
+            "projectName": "banco_essence",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
