@@ -44,10 +44,10 @@ public class ClientesController {
     @PutMapping (value = "/")
     @ResponseBody
     public ResponseEntity <ClientesModel> editar (@RequestBody ClientesModel clientesModel){
-        ClientesModel obj = clientesService.findById(clientesModel.getId_cliente());
+        ClientesModel obj = clientesService.findById(clientesModel.getIdCliente());
         if (obj != null){
-            obj.setUsser_cliente(clientesModel.getUsser_cliente());
-            obj.setPasswd_cliente(clientesModel.getPasswd_cliente());
+            obj.setUsserCliente(clientesModel.getUsserCliente());
+            obj.setPasswdCliente(clientesModel.getPasswdCliente());
             clientesService.save(clientesModel);
         } else {
             return new ResponseEntity <> (obj, HttpStatus.INTERNAL_SERVER_ERROR);

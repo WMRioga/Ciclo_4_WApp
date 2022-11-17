@@ -17,7 +17,7 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table (name = "cuentas")
+@Table (name = "Cuentas")
 public class CuentasModel implements Serializable{
     @Id
     @Column(name = "idCuenta")
@@ -27,7 +27,7 @@ public class CuentasModel implements Serializable{
     @Column(name = "saldoCuenta")
     private double saldoCuenta;
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
+    @JoinColumn(name = "idCliente")
     private ClientesModel cliente;
 
     @Override

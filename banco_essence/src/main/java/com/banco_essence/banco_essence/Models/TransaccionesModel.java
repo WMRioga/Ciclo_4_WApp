@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table (name = "transacciones")
+@Table (name = "Transacciones")
 public class TransaccionesModel implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

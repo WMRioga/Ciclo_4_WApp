@@ -12,18 +12,18 @@ import lombok.Setter;
 
 
 @Entity
-@Table (name="clientes")
+@Table (name="Clientes")
 public class ClientesModel implements Serializable{
     @Id
-    @Column(name="id_cliente")
-    private String id_cliente;
-    @Column(name="usser_cliente")
-    private String usser_cliente;
-    @Column(name="passwd_cliente")
-    private String passwd_cliente;
+    @Column(name="idCliente")
+    private String idCliente;
+    @Column(name="usserCliente")
+    private String usserCliente;
+    @Column(name="passwdCliente")
+    private String passwdCliente;
 
     @Override
     public String toString(){
-        return "Cliente [id_cliente:" + id_cliente + ", usser_cliente:" + usser_cliente + ", passwd_cliente:"+ passwd_cliente + "]";
+        return "Cliente [idCliente:" + idCliente + ", usserCliente:" + usserCliente + ", passwdCliente:"+ passwdCliente + "]";
     }
 }
