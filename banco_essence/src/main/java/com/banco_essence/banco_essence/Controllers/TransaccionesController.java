@@ -63,7 +63,7 @@ public class TransaccionesController {
     }
     @GetMapping ("/consulta")
     @ResponseBody
-    public List<TransaccionesModel> consulta_cuenta(@RequestParam ("idc") String idcta){
+    public List<TransaccionesModel> consulta_cuenta(@RequestParam ("idcta") String idcta){
         return transaccionesService.consulta_cuenta(idcta);
     }
 }
