@@ -40,11 +40,11 @@ public class CuentasController {
     }
     @PutMapping (value = "/")
     public ResponseEntity <CuentasModel> editar (@RequestBody CuentasModel cuentasModel){
-        CuentasModel obj = cuentasService.findById(cuentasModel.getIdCuenta());
+        CuentasModel obj = cuentasService.findById(cuentasModel.get_id());
         if (obj != null){
-            obj.setCliente(cuentasModel.getCliente());
-            obj.setFechaApertura(cuentasModel.getFechaApertura());
-            obj.setSaldoCuenta(cuentasModel.getSaldoCuenta());
+            obj.setCuenta_fecha_apertura(cuentasModel.getCuenta_fecha_apertura());
+            obj.setCuenta_saldo(cuentasModel.getCuenta_saldo());
+            obj.set_id_cliente(cuentasModel.get_id_cliente());
             cuentasService.save(obj);
         } else {
             return new ResponseEntity<>(obj, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -61,7 +61,7 @@ public class CuentasController {
     }
     @GetMapping ("/consulta")
     @ResponseBody
-    public List<CuentasModel> consulta_cuenta(@RequestParam ("idc") String idc){
-        return cuentasService.consulta_cuenta(idc);
+    public List<CuentasModel> consulta_cliente(@RequestParam ("idc") String idc){
+        return cuentasService.consulta_cliente(idc);
     }
 }

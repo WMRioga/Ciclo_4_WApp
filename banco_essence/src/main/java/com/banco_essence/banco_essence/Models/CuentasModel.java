@@ -15,23 +15,22 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity
-@Table (name = "Cuentas")
+@Table (name = "c4g21_cuentas")
 public class CuentasModel implements Serializable{
     @Id
-    @Column(name = "idCuenta")
-    private String idCuenta;
-    @Column(name = "fechaApertura")
-    private Date fechaApertura;
-    @Column(name = "saldoCuenta")
-    private double saldoCuenta;
+    @Column(name = "_id")
+    private String _id;
+    @Column(name = "cuenta_fecha_apertura")
+    private Date cuenta_fecha_apertura;
+    @Column(name = "cuenta_saldo")
+    private double cuenta_saldo;
     @ManyToOne
-    @JoinColumn(name = "idCliente")
-    private ClientesModel cliente;
+    @JoinColumn(name = "_id_cliente")
+    private ClientesModel _id_cliente;
 
     @Override
     public String toString(){
-        return "Cuenta [idCuenta=" + idCuenta + ", fechaApertura=" + fechaApertura + ", saldoCuenta=" + saldoCuenta + ", Cliente=" + cliente + "]";
+        return "Cuenta [idCuenta=" + _id + ", fechaApertura=" + cuenta_fecha_apertura + ", saldoCuenta=" + cuenta_saldo + ", Cliente=" + _id_cliente + "]";
     }
 }

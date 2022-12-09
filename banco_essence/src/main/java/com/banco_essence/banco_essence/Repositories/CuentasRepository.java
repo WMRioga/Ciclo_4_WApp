@@ -14,6 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface CuentasRepository extends CrudRepository <CuentasModel, String>{
     // Operacion para seleccionar cuentas de un Cliente en particular (SELECT)
     @Transactional (readOnly = true) // No afecta la integridad de la base de datos.
-    @Query (value = "SELECT * FROM cuentas WHERE idCliente= :idc", nativeQuery = true)
-    public List<CuentasModel> consulta_cuenta(@Param ("idc") String idc);
+    @Query (value = "SELECT * FROM c4g21_cuentas WHERE _id_cliente= :idc", nativeQuery = true)
+    public List<CuentasModel> consulta_cliente(@Param ("idc") String idc);
 }

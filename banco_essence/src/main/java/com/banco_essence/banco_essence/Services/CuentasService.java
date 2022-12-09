@@ -31,7 +31,7 @@ public class CuentasService {
         return (List <CuentasModel>) cuentasRepository.findAll();
     }
     @Transactional (readOnly = true)
-    public List <CuentasModel> consulta_cuenta(String idc){
-        return (List <CuentasModel>) cuentasRepository.consulta_cuenta(idc);
+    public List <CuentasModel> consulta_cliente(String idc){
+        return (List <CuentasModel>) cuentasRepository.consulta_cliente(idc);
     }
 }

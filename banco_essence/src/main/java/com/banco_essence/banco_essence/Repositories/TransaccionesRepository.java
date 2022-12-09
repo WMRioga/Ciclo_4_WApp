@@ -14,6 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface TransaccionesRepository extends CrudRepository <TransaccionesModel, Integer> {
     // Operación para seleccionar transacciones de una cuenta particular (SELECT)
     @Transactional (readOnly = true)
-    @Query (value = "SELECT * FROM transacciones WHERE idCuenta= :idcta", nativeQuery = true)
+    @Query (value = "SELECT * FROM c4g21_transacciones WHERE _id_cuenta= :idcta", nativeQuery = true)
     public List <TransaccionesModel> consulta_cuenta(@Param ("idcta") String idcta);
 }

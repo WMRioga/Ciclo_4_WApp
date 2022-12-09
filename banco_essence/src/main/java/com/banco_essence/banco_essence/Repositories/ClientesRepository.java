@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface ClientesRepository extends CrudRepository <ClientesModel, String>{
     // Operacion de autenticación (SELECT)
     @Transactional (readOnly = true) // No afecta la integridad de la base de datos
-    @Query (value = "SELECT * FROM clientes WHERE usserCliente= :usuario AND passwdCliente= :clave", nativeQuery = true)
+    @Query (value = "SELECT * FROM c4g21_clientes WHERE client_email= :usuario AND client_passwd= :clave", nativeQuery = true)
     public ClientesModel login (@Param ("usuario") String usuario, @Param ("clave") String clave);
 }

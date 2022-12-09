@@ -9,21 +9,21 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
-
 @Entity
-@Table (name="Clientes")
+@Table (name="c4g21_clientes")
 public class ClientesModel implements Serializable{
     @Id
-    @Column(name="idCliente")
-    private String idCliente;
-    @Column(name="usserCliente")
-    private String usserCliente;
-    @Column(name="passwdCliente")
-    private String passwdCliente;
+    @Column(name="_id")
+    private String _id;
+    @Column(name="client_name")
+    private String client_name;
+    @Column(name="client_passwd")
+    private String client_passwd;
+    @Column(name="client_email")
+    private String client_email;
 
     @Override
     public String toString(){
-        return "Cliente [idCliente:" + idCliente + ", usserCliente:" + usserCliente + ", passwdCliente:"+ passwdCliente + "]";
+        return "Cliente [idCliente:" + _id + ", usserCliente:" + client_name + ", passwdCliente:"+ client_passwd + ", emailCliente:"+ client_email + "]";
     }
 }

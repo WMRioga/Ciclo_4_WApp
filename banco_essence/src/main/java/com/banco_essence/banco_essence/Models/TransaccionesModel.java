@@ -10,23 +10,22 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity
-@Table (name = "Transacciones")
+@Table (name = "c4g21_transacciones")
 public class TransaccionesModel implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTransaccion")
-    private int idTransaccion;
-    private Date fechaTransaccion;
-    private double valorTransaccion;
-    private String tipoTransaccion;
+    @Column(name = "_id")
+    private int _id;
+    private Date transaction_date;
+    private double transaction_value;
+    private String transaction_type;
     @ManyToOne
-    @JoinColumn(name = "idCuenta")
-    private CuentasModel cuenta;
+    @JoinColumn(name = "_id_cuenta")
+    private CuentasModel _id_cuenta;
     
     @Override
     public String toString(){
-        return "Transaccion [idTransaccion=" + idTransaccion + ", fechaTransaccion=" + fechaTransaccion + ", valorTransaccion=" + valorTransaccion +  ", tipoTransaccion=" + tipoTransaccion + ", Cuenta=" + cuenta + "]";
+        return "Transaccion [idTransaccion=" + _id + ", fechaTransaccion=" + transaction_date + ", valorTransaccion=" + transaction_value +  ", tipoTransaccion=" + transaction_type + ", Cuenta=" + _id_cuenta + "]";
     }
 }
