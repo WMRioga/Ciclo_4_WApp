@@ -6,6 +6,8 @@ import com.banco_essence.banco_essence.Services.CuentasService;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.HttpStatus;
@@ -24,7 +26,7 @@ public class CuentasController {
     private CuentasService cuentasService;
 
     @PostMapping (value = "/")
-    public ResponseEntity <CuentasModel> agregar (@RequestBody CuentasModel cuentasModel){
+    public ResponseEntity <CuentasModel> agregar (@Valid @RequestBody CuentasModel cuentasModel){
         CuentasModel obj = cuentasService.save(cuentasModel);
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
@@ -39,7 +41,7 @@ public class CuentasController {
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
     @PutMapping (value = "/")
-    public ResponseEntity <CuentasModel> editar (@RequestBody CuentasModel cuentasModel){
+    public ResponseEntity <CuentasModel> editar (@Valid @RequestBody CuentasModel cuentasModel){
         CuentasModel obj = cuentasService.findById(cuentasModel.get_id());
         if (obj != null){
             obj.setCuenta_fecha_apertura(cuentasModel.getCuenta_fecha_apertura());

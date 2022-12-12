@@ -6,6 +6,8 @@ import com.banco_essence.banco_essence.Services.TransaccionesService;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.HttpStatus;
@@ -25,7 +27,7 @@ public class TransaccionesController {
 
     @PostMapping (value = "/")
     @ResponseBody
-    public ResponseEntity<TransaccionesModel> agregar (@RequestBody TransaccionesModel transaccionesModel){
+    public ResponseEntity<TransaccionesModel> agregar (@Valid @RequestBody TransaccionesModel transaccionesModel){
         System.out.println(transaccionesModel);
         TransaccionesModel obj = transaccionesService.save(transaccionesModel);
         return new ResponseEntity<>(obj, HttpStatus.OK);
@@ -41,7 +43,7 @@ public class TransaccionesController {
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
     @PutMapping (value = "/")
-    public ResponseEntity<TransaccionesModel> editar (@RequestBody TransaccionesModel transaccionesModel){
+    public ResponseEntity<TransaccionesModel> editar (@Valid @RequestBody TransaccionesModel transaccionesModel){
         TransaccionesModel obj = transaccionesService.findById(transaccionesModel.get_id());
         if (obj != null){
             obj.setTransaction_date(transaccionesModel.getTransaction_date());
